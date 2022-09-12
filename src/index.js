@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './reset.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ChakraProvider } from '@chakra-ui/react'
+import { BasketProvider,  } from './components/contexts/BasketContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <ChakraProvider>
+        <BasketProvider>
+          <App />
+        </BasketProvider>
+      </ChakraProvider>
   </React.StrictMode>
 );
 
